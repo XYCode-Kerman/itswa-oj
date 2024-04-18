@@ -1,12 +1,42 @@
 <template>
     <div>
         <div class="card shadow-lg">
-            <div class="card-body">
-                <div class="card-title">比赛 {{ contest.name }}</div>
+            <div class="card-body grid grid-cols-4">
+                <div class="card-title col-span-full text-3xl">比赛 {{ contest.name }}</div>
 
                 <!-- 简介 -->
-                <div class="border rounded-lg p-5 max-w-none prose prose-sm md:prose-base"
+                <div class="col-span-3 card card-bordered p-5 max-w-none prose prose-sm md:prose-base"
                     v-html="md.render(contest.description)">
+                </div>
+
+                <!-- 比赛信息 -->
+                <div class="flex flex-row w-full">
+                    <!-- 基础信息 -->
+                    <div class="card card-bordered p-2 w-full">
+                        <table class="table">
+                            <tbody>
+                                <!-- 比赛编号 -->
+                                <tr>
+                                    <td>比赛编号</td>
+                                    <td class="tooltip" :data-tip="contest.contest_id">{{
+                                        contest.contest_id.substring(0, 8)
+                                        }}...</td>
+                                </tr>
+
+                                <!-- 开始时间 -->
+                                <tr>
+                                    <td>开始于</td>
+                                    <td>{{ new Date(contest.start_time).toLocaleString() }}</td>
+                                </tr>
+
+                                <!-- 结束时间 -->
+                                <tr>
+                                    <td>结束于</td>
+                                    <td>{{ new Date(contest.end_time).toLocaleString() }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
