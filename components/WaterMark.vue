@@ -1,5 +1,7 @@
 <template>
-    <div class="fixed right-0 bottom-0 w-1/5 text-[0.6rem] text-right opacity-45 select-none z-50">
+    <div v-if="!hidden" @click="hidden = !hidden"
+        class="fixed right-0 bottom-0 w-1/5 text-[0.6rem] text-right opacity-45 select-none z-50 tooltip tooltip-left cursor-pointer"
+        data-tip="点击以隐藏">
         <!-- 许可证声明 -->
         <div>
             <p>ItsWA Online Judge 是 ItsWA 的一部分。</p>
@@ -13,3 +15,7 @@
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+const hidden = ref(false)
+</script>
