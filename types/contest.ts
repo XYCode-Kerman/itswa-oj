@@ -1,4 +1,6 @@
 export interface OJContest {
+    name: string,
+    description: string,
     contest_id: string,
     ccf_file: string,
     start_time: string   // format: date-time
