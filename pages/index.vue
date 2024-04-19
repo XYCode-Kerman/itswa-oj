@@ -1,7 +1,7 @@
 <template>
     <div class="grid grid-cols-2 gap-2">
-        <NuxtLink :to="`/contest-${contest.contest_id}`" v-for="contest, index in contests" :key="contest.contest_id"
-            class="card card-bordered" :class="{
+        <NuxtLink :to="`/contest-${contest.contest_id}/info`" v-for="contest, index in contests"
+            :key="contest.contest_id" class="card card-bordered" :class="{
                 'bg-success': new Date(contest.start_time) <= new Date() && new Date() <= new Date(contest.end_time),
                 'bg-warning': new Date(contest.start_time) > new Date()
             }">
