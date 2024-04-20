@@ -18,7 +18,7 @@
                             <td>比赛编号</td>
                             <td class="tooltip" :data-tip="contest.contest_id">{{
                                 contest.contest_id.substring(0, 8)
-                                }}...</td>
+                            }}...</td>
                         </tr>
 
                         <!-- 开始时间 -->
@@ -31,6 +31,12 @@
                         <tr>
                             <td>结束于</td>
                             <td>{{ new Date(contest.end_time).toLocaleString() }}</td>
+                        </tr>
+
+                        <!-- 题目数量 -->
+                        <tr>
+                            <td>题目数量</td>
+                            <td>{{ contest.problem_count }}</td>
                         </tr>
                     </tbody>
                 </table>

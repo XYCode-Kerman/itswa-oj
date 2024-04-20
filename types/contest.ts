@@ -5,6 +5,7 @@ export interface OJContest {
     ccf_file: string,
     start_time: string   // format: date-time
     end_time: string     // format: date-time
+    problem_count: number
 }
 
 export interface OJProblem {
