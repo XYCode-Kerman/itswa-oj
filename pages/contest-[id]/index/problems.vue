@@ -2,7 +2,8 @@
     <div>
         <div v-if="new Date(contest.start_time) < new Date()" class="flex flex-col gap-4">
             <!-- 题目信息 -->
-            <Problem v-for="problem in problems" :key="problem.problem_id" :problem="problem" />
+            <Problem v-for="problem in problems" :key="problem.problem_id" :problem="problem"
+                :contest_id="contest_id as string" />
         </div>
 
         <div v-else>
@@ -12,6 +13,7 @@
 </template>
 
 <script setup lang="ts">
+import renderMathInElement from 'katex/contrib/auto-render/auto-render.js';
 import markdownIt from 'markdown-it';
 import { useRoute } from "vue-router";
 import type { OJContest, OJProblem } from "~/types/contest";
@@ -28,4 +30,13 @@ const problems: Ref<OJProblem[]> = ref([])
 if (new Date(contest.value.start_time) < new Date()) {
     problems.value = (await useFetch(`/api/contests/detail/${contest_id}/problems`)).data.value as OJProblem[]
 }
+
+onMounted(() => {
+    renderMathInElement(document.body, {
+        delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false }
+        ]
+    })
+})
 </script>

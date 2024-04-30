@@ -13,11 +13,14 @@
     "@tailwindcss/typography": "^0.5.12",
     "@types/katex": "^0.16.7",
     "@types/markdown-it": "^14.0.1",
+    "@types/prismjs": "^1.26.3",
     "katex": "^0.16.10",
     "markdown-it": "^14.1.0",
     "nuxt": "^3.11.2",
     "nuxt-proxy": "^0.4.1",
+    "prismjs": "^1.29.0",
     "vue": "^3.4.21",
+    "vue-prism-editor": "2.0.0-alpha.2",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {

@@ -9,7 +9,12 @@ export default {
     "./error.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        // 'code': ['Fira Code', 'Fira Mono', 'Consolas', 'Menlo', 'Courier', 'monospace']
+        'code': ['Fira Code', 'Fira Mono']
+      }
+    },
   },
   plugins: [require('daisyui'), require('@tailwindcss/typography')],
 }
